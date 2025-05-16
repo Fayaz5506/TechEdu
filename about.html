@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechEdu | About Step</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1e293b;
+      padding: 15px 0;
+      gap: 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #38bdf8;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0ea5e9;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 40px;
+      background: url('images/learn-lead-bg.mp4') center/cover no-repeat;
+      background-blend-mode: darken;
+      background-color: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-top: 10px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin: 60px auto;
+      max-width: 800px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background-color: #334155;
+    }
+
+    .step {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 20px 30px;
+      width: 80%;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #38bdf8;
+      border-radius: 50%;
+      top: 20px;
+      left: -8px;
+    }
+
+    .step.right::before {
+      left: auto;
+      right: -8px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: #38bdf8;
+    }
+
+    .team-section {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .team-section h2 {
+      margin-bottom: 30px;
+      color: #38bdf8;
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      background-color: #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+      transform: scale(1.05);
+    }
+
+    .team-member img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .team-member h4 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      background-color: #0f172a;
+      padding: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Learn Today, Lead Tomorrow</h1>
+    <p>Driven by innovation. Empowered by knowledge.</p>
+  </section>
+
+  <section class="timeline">
+    <div class="step left">
+      <h3>2019: The Beginning</h3>
+      <p>TechEdu was founded by 3 educators passionate about modern learning.</p>
+    </div>
+    <div class="step right">
+      <h3>2020: Massive Growth</h3>
+      <p>Over 10,000 students joined us during the e-learning revolution.</p>
+    </div>
+    <div class="step left">
+      <h3>2022: Expansion</h3>
+      <p>Expanded to 12+ categories and launched partnerships globally.</p>
+    </div>
+    <div class="step right">
+      <h3>2025: The Future</h3>
+      <p>Preparing for AI-powered learning, accessible anywhere, anytime.</p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/team1.jpg" alt="Ankit Mehra">
+        <h4>Piyush Solankia</h4>
+        <p>CEO & Co-founder</p>
+      </div>
+      <div class="team-member">
+        <img src="images/team2.jpg" alt="Riya Joshi">
+        <h4>Adarsh Singh</h4>
+        <p>Chief Academic Officer</p>
+      </div>
+      <div class="team-member">
+        <img src="images/team3.jpg" alt="Aditya Rao">
+        <h4>Vijay kota</h4>
+        <p>Curriculum Lead</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TechEdu. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TechEdu - Transform your skills with our expert-led online courses." />
+  <meta name="keywords" content="tech, education, online learning, courses" />
+  <title>TechEdu | Learn Today, Lead Tomorrow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f2f5;
+      color: #2a345a;
+    }
+
+    header {
+      background: #0a0a23;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1526378722540-4da896eecf4a?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      background-color: #ff6a00;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff3d00;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #0a0a23;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #c04848;
+      margin-top: 10px;
+    }
+
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .course {
+      background-color: #fff;
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .course:hover {
+      transform: scale(1.03);
+    }
+
+    .course img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .course-content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .course-content h4 {
+      margin-bottom: 10px;
+      color: #0a0a23;
+    }
+
+    .course-content span {
+      font-size: 14px;
+      color: #777;
+    }
+
+    footer {
+      background-color: #0a0a23;
+      color: #ccc;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .features,
+      .courses {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 0 20px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">TechEdu</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="form.html">form</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/Users/fayazshaikh/Desktop/fayaz html lec3/istockphoto-2165894010-640_adpp_is.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Learn Today, Lead Tomorrow</h1>
+    <p>Start your journey with expert-led courses in tech, design, and data.</p>
+    <a href="courses.html" class="btn">Browse Courses</a>
+  </div>
+</section>
+
+  <section class="section">
+    <h2>What Makes Us Different</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>👨‍🏫 Expert Mentors</h3>
+        <p>Learn from professionals with real-world experience.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📚 Lifetime Access</h3>
+        <p>Access your learning materials anytime, forever.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🎯 Career Focused</h3>
+        <p>Get career-ready with project-based practical learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Trending Courses</h2>
+    <div class="courses">
+      <div class="course">
+        <img src="https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?semt=ais_hybrid&w=740" alt="Web Dev" />
+        <div class="course-content">
+          <h4>Web Development Mastery</h4>
+          <span>10 Weeks | ₹15,999</span>
+        </div>
+      </div>
+      <div class="course">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*LxP1qwPjHE1CDFmLBh3bxQ.jpeg" alt="Data Science" />
+        <div class="course-content">
+          <h4>Data Science with Python</h4>
+          <span>12 Weeks | ₹18,499</span>
+        </div>
+      </div>
+      <div class="course">
+        <img src="https://sprintscdn-fnh2cugtb8a4deba.z02.azurefd.net/production/store/90058138/1737390237678e789d8b715.png" alt="UI/UX" />
+        <div class="course-content">
+          <h4>UI/UX Design Bootcamp</h4>
+          <span>8 Weeks | ₹12,999</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TechEdu</p>
+    <p>Designed with 💙🌍 for future innovators.</p>
+  </footer>
+
+</body>
+</html>

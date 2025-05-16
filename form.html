@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client-Side Form Validation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f8f8f8, #e0f7fa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 420px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    input[type="submit"] {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #004d40;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.85em;
+      margin-top: -12px;
+      margin-bottom: 10px;
+    }
+
+    .success-message {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm" action="#" method="post">
+    <h2>User Registration</h2>
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required />
+    <div class="error-message" id="nameError"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
+    <div class="error-message" id="emailError"></div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <div class="error-message" id="passwordError"></div>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required />
+    <div class="error-message" id="phoneError"></div>
+
+    <label for="birthday">Date of Birth:</label>
+    <input type="date" id="birthday" name="birthday" required />
+    <div class="error-message" id="birthdayError"></div>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required min="18" max="100" />
+    <div class="error-message" id="ageError"></div>
+
+    <label for="course">Select Course:</label>
+    <select id="course" name="course" required>
+        <option value="">--Choose--</option>
+        <option value="web-dev">Web Development</option>
+        <option value="data-science">Data Science</option>
+        <option value="ui-ux">UI/UX Design</option>
+      </select>
+    <div class="error-message" id="courseError"></div>
+
+    <input type="submit" value="Register" />
+    <div class="success-message" id="successMessage"></div>
+  </form>
+
+  <script>
+    const form = document.getElementById("registrationForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+      let valid = true;
+
+      const name = document.getElementById("name");
+      const nameError = document.getElementById("nameError");
+      if (name.value.trim() === "") {
+        nameError.textContent = "Name is required.";
+        valid = false;
+      } else {
+        nameError.textContent = "";
+      }
+
+      const email = document.getElementById("email");
+      const emailError = document.getElementById("emailError");
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email.value.trim())) {
+        emailError.textContent = "Please enter a valid email address.";
+        valid = false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      const password = document.getElementById("password");
+const passwordError = document.getElementById("passwordError");
+
+const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+if (!passwordPattern.test(password.value.trim())) {
+  passwordError.textContent = "Password must be 8+ chars with uppercase, number & special char.";
+  valid = false;
+} else {
+  passwordError.textContent = "";
+}
+
+
+      const phone = document.getElementById("phone");
+      const phoneError = document.getElementById("phoneError");
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone.value.trim())) {
+        phoneError.textContent = "Phone number must be exactly 10 digits.";
+        valid = false;
+      } else {
+        phoneError.textContent = "";
+      }
+
+      const age = document.getElementById("age");
+      const ageError = document.getElementById("ageError");
+      if (age.value < 18 || age.value > 100) {
+        ageError.textContent = "Age must be between 18 and 100.";
+        valid = false;
+      } else {
+        ageError.textContent = "";
+      }
+
+      const course = document.getElementById("course");
+      const courseError = document.getElementById("courseError");
+      if (course.value === "") {
+        courseError.textContent = "Please select a course.";
+        valid = false;
+      } else {
+        courseError.textContent = "";
+      }
+
+      if (!valid) {
+        event.preventDefault();
+        successMessage.textContent = "";
+      } else {
+        event.preventDefault(); // Prevent actual submission for demo
+        successMessage.textContent = "🎉 Registration successful!";
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
